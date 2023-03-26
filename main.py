@@ -1,8 +1,8 @@
 from tkinter import *
 import tkinter as tk
-
+import os
 import mysql.connector
-
+htmlstring = "start about.html"
 db=mysql.connector.connect(
     host="localhost",
     user="root",
@@ -29,6 +29,8 @@ r3 = Radiobutton(win, text="Populate tables", variable=radio, value=3)
 r3.pack(anchor=N)
 r4 = Radiobutton(win, text="Query tables", variable=radio, value=4)
 r4.pack(anchor=N)
+r5 = Radiobutton(win, text="About", variable=radio, value=5)
+r5.pack(anchor=N)
 exit_button = Button(win, text="Done", height=5,width=30, command=win.destroy)
 exit_button.pack(pady=20)
 win.mainloop()
@@ -147,3 +149,5 @@ elif(radio.get()==4):
     submit=Button(win,text="Submit query",command=query)
     submit.pack()
     win.mainloop()
+elif(radio.get()==5):
+    os.system(htmlstring)
