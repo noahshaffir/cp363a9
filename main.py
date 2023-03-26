@@ -19,7 +19,7 @@ cursor=db.cursor() #db cursor
 
 win = Tk()
 win.title("Bob's Car Rental")
-win.geometry("400x400")
+win.geometry("800x400")
 radio = IntVar()
 r1 = Radiobutton(win, text="Create tables", variable=radio, value=1)
 r1.pack(anchor=N)
@@ -36,7 +36,7 @@ exit_button.pack(pady=20)
 win.mainloop()
 if(radio.get()==1): #checks which radiobutton was selected
     win=Tk()
-    win.geometry("400x400")
+    win.geometry("800x200")
     win.title("Create tables")
     e=Entry(win)
     e.pack()
@@ -49,7 +49,7 @@ if(radio.get()==1): #checks which radiobutton was selected
     win.mainloop()
 elif(radio.get()==2):
     win=Tk()
-    win.geometry("400x400")
+    win.geometry("800x200")
     win.title("Drop tables")
     e=Entry(win)
     e.pack()
@@ -62,7 +62,7 @@ elif(radio.get()==2):
     win.mainloop()
 elif(radio.get()==3):
     win=Tk()
-    win.geometry("400x400")
+    win.geometry("800x200")
     win.title("Populate tables")
     e=Entry(win)
     e.pack()
@@ -82,7 +82,7 @@ elif(radio.get()==4):
     query6= "SELECT year, AVG(price) FROM vehicle GROUP BY year HAVING AVG(price)< (SELECT AVG(price) FROM vehicle);"
     query7= "SELECT ContractID FROM vehicle v LEFT JOIN contract c ON c.LicensePlate = v.LicensePlate;"
     win=Tk()
-    win.geometry("400x400")
+    win.geometry("800x400")
     win.title("Query tables")
     label=Label(win,text="Query 1: "+query1)  
     label.pack()
