@@ -84,6 +84,20 @@ elif(radio.get()==4):
     win=Tk()
     win.geometry("400x400")
     win.title("Query tables")
+    label=Label(win,text="Query 1: "+query1)  
+    label.pack()
+    label=Label(win,text="Query 2: "+query2)  
+    label.pack()
+    label=Label(win,text="Query 3: "+query3)  
+    label.pack()
+    label=Label(win,text="Query 4: "+query4)  
+    label.pack()
+    label=Label(win,text="Query 5: "+query5)  
+    label.pack()
+    label=Label(win,text="Query 6: "+query6)  
+    label.pack()
+    label=Label(win,text="Query 7: "+query7)  
+    label.pack()
     def query(): 
         match ladio.get():
             case 1:
