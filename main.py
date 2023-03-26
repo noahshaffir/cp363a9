@@ -6,8 +6,16 @@ import mysql.connector
 db=mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="NOah2003"
+    passwd="NOah2003",
+    database="cp363_a3"
 )
+cursor=db.cursor() #db cursor
+
+
+
+
+
+
 
 win = Tk()
 win.title("Bob's Car Rental")
@@ -24,18 +32,48 @@ r4.pack(anchor=N)
 exit_button = Button(win, text="Done", height=5,width=30, command=win.destroy)
 exit_button.pack(pady=20)
 win.mainloop()
-if(radio.get()==1):
+if(radio.get()==1): #checks which radiobutton was selected
     win=Tk()
     win.geometry("400x400")
     win.title("Create tables")
     e=Entry(win)
     e.pack()
-    def query():
-        label=Label(win,text="Query '"+e.get()+"' passed succesfully.") 
+    def query(): #e.get() gets the input into entrybox e, gets query from user input (string)
+        cursor.execute(e.get()) #executes query
+        label=Label(win,text="Query '"+e.get()+"' passed succesfully.")  #adds label that executed properly
         label.pack()
     submit=Button(win,text="Submit query",command=query)
     submit.pack()
     win.mainloop()
-
-
-    print("hello world")
+elif(radio.get()==2):
+    win=Tk()
+    win.geometry("400x400")
+    win.title("Drop tables")
+    e=Entry(win)
+    e.pack()
+    def query(): #e.get() gets the input into entrybox e, gets query from user input (string)
+        cursor.execute(e.get()) #executes query
+        label=Label(win,text="Query '"+e.get()+"' passed succesfully.")  #adds label that executed properly
+        label.pack()
+    submit=Button(win,text="Submit query",command=query)
+    submit.pack()
+    win.mainloop()
+elif(radio.get()==3):
+    win=Tk()
+    win.geometry("400x400")
+    win.title("Populate tables")
+    e=Entry(win)
+    e.pack()
+    def query(): #e.get() gets the input into entrybox e, gets query from user input (string)
+        cursor.execute(e.get()) #executes query
+        label=Label(win,text="Query '"+e.get()+"' passed succesfully.")  #adds label that executed properly
+        label.pack()
+    submit=Button(win,text="Submit query",command=query)
+    submit.pack()
+    win.mainloop()
+elif(radio.get()==4):
+    win=Tk()
+    win.geometry("400x400")
+    win.title("Query tables")
+    #your code here
+    win.mainloop()
