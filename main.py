@@ -36,3 +36,6 @@ if(radio.get()==1):
     submit=Button(win,text="Submit query",command=query)
     submit.pack()
     win.mainloop()
+
+
+    print("hello world")
