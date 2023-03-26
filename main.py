@@ -3,10 +3,14 @@ import tkinter as tk
 import os
 import mysql.connector
 htmlstring = "start about.html"
+user=input("What's your username?")
+passwd=input("What's your password?")
+os.system('cls')
+
 db=mysql.connector.connect(
     host="localhost",
-    user="root",
-    passwd="NOah2003",
+    user=user,
+    passwd=passwd,
     database="cp363_a3"
 )
 cursor=db.cursor() #db cursor
@@ -121,8 +125,11 @@ elif(radio.get()==4):
             case 4:
                 cursor.execute(query4)
                 result=cursor.fetchall()
+                ly=""
                 for r in result:
                     print(r)
+                rly=Label(win,text=ly)
+                rly.pack()
                 win.destroy()
             case 5:
                 cursor.execute(query5)
