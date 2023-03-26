@@ -3,7 +3,11 @@ import tkinter as tk
 
 import mysql.connector
 
-db=mysql.connector.connect()
+db=mysql.connector.connect(
+    host="localhost",
+    user="root",
+    passwd="NOah2003"
+)
 
 win = Tk()
 win.title("Bob's Car Rental")
